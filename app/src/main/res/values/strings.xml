@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ProyectoGEx</string>
+    <string name="started_title">Bienvenido</string>
+    <string name="started_sub_title">Conoce la información de los extintores del DSC<br><b> Inicia sesión</b> si tienes una cuenta.</br><br><b> Registrate</b> para poder iniciar en la app.</br></string>
+    <string name="illustration_image">Illustration image</string>
 </resources>
