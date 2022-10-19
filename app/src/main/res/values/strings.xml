@@ -3,4 +3,13 @@
     <string name="started_title">Bienvenido</string>
     <string name="started_sub_title">Conoce la información de los extintores del DSC<br><b> Inicia sesión</b> si tienes una cuenta.</br><br><b> Registrate</b> para poder iniciar en la app.</br></string>
     <string name="illustration_image">Illustration image</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="register_sub_title"><font color="black"><b>Registrarse</b></font> para iniciar en la aplicación.</string>
+    <string name="fullname">Nombre completo</string>
+    <string name="email">Correo electronico</string>
+    <string name="user">Usuario</string>
+    <string name="register_password">Contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="btnregister">REGISTRARSE</string>
+    <string name="tengo_cuenta">Tengo una cuenta <font color="00C9BB"><b>Iniciar sesión</b></font></string>
 </resources>

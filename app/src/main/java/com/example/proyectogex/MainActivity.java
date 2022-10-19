@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity{
     /*variable para cambiar de ventana(Main a Information extinguisher)*/
-    Button btnLogin;
+    Button btnLogin,btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(i);
             }
         });
+        btnRegister = (Button) findViewById(R.id.btn_register);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(i);
+            }
+        });
     }
-
 }
