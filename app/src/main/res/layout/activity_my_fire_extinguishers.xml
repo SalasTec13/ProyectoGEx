@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyFireExtinguishersActivity"
+    android:padding="20dp">
+    <TextView
+        android:id="@+id/tv_started_title_extinguisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Extintores"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/extinguisher"
+        style="@style/ButtonWhitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extintor 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/extinguisher_2"
+        style="@style/ButtonWhitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extintor 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/extinguisher_3"
+        style="@style/ButtonWhitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extintor 3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.325" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/extinguisher_4"
+        style="@style/ButtonWhitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extintor 4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/extinguisher_5"
+        style="@style/ButtonWhitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extintor 5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.614" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/extinguisher_6"
+        style="@style/ButtonWhitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extintor 6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.751" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_ex"
+        style="@style/ButtonWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_add_extinguisher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_started_title_extinguisher"
+        app:layout_constraintVertical_bias="0.904" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">ProyectoGEx</string>
+    <string name="started_title">Bienvenido</string>
+    <string name="started_sub_title">Conoce la información de los extintores del DSC<br><b> Inicia sesión</b> si tienes una cuenta.</br><br><b> Registrate</b> para poder iniciar en la app.</br></string>
+    <string name="illustration_image">Illustration image</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="register_sub_title"><font color="black"><b>Registrarse</b></font> para iniciar en la aplicación.</string>
+    <string name="fullname">Nombre completo</string>
+    <string name="email">Correo electronico</string>
+    <string name="user">Usuario</string>
+    <string name="register_password">Contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="btnregister">REGISTRARSE</string>
+    <string name="tengo_cuenta">Tengo una cuenta <font color="00C9BB"><b>Iniciar sesión</b></font></string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="iniciar_sesion_sub"><font color="00C9B8"><b>Iniciar sesión</b></font> si tienes una cuenta</string>
+    <string name="usuario">Usuario</string>
+    <string name="btn_iniciar">INICIAR SESIÓN</string>
+    <string name="password">Contraseña</string>
+    <string name="olvide_mi_contrasena">Olvide mi contraseña</string>
+    <string name="no_tengo_cuenta">No tengo una cuenta <font color="00C9BB"><b>Registrarse</b></font></string>
+    <string name="btn_add_extinguisher">AÑADIR</string>
+    <string name="inspecciones">Inspecciones</string>
+
 </resources>

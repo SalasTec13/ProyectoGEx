@@ -4,73 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/white"
+    tools:context=".HomeActivity"
     android:padding="20dp">
+
     <TextView
-        android:id="@+id/tv_started_title"
+        android:id="@+id/tv_home_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/started_title"
-        android:textColor="@color/black"
-        android:textSize="36sp"
-        android:textStyle="bold"
+        style="@style/Title"
+        android:text="Hola @user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_started_sub_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="164dp"
         android:fontFamily="@font/montserrat"
         android:lineHeight="20sp"
-        android:text="@string/started_sub_title"
+        android:text="Qué haras hoy"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Extintores"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_started_title" />
-    <ImageView
-        android:id="@+id/img_illustration_started"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="112dp"
-        android:contentDescription="@string/illustration_image"
-        android:src="@drawable/extintor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_Extintores"
+        style="@style/ButtonWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/ButtonWhite"
         android:layout_marginTop="16dp"
-        android:text="Log In"
+        android:text="REVISAR EXTINTORES"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843"/>
+        app:layout_constraintVertical_bias="0.344" />
+
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btnCalendario"
+        style="@style/ButtonWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/ButtonWhite"
         android:layout_marginTop="16dp"
-        android:text="Registro"
+        android:text="CALENDARIO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.458" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
