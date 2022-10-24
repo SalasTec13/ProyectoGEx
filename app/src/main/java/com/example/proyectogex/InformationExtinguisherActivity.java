@@ -1,12 +1,16 @@
 package com.example.proyectogex;
 
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -17,20 +21,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class InformationExtinguisherActivity extends AppCompatActivity implements View.OnClickListener {
+public class InformationExtinguisherActivity extends AppCompatActivity{
 
     /*Registro de los datos Extintor*/
-    EditText etidExtintor, etfolio,etcapacidad,ettipo,etseguro,etrecargado,etubicacion,etfecha_A,etfecha_V;
+    EditText etidExtintor, etfolio,etcapacidad,
+            ettipo,etubicacion,etseguro,etrecargado;
     Button btnAgregar;
 
-    RequestQueue requestQueue;
-
-    private static final String URL1="http://10.0.0.2/extintorbd/save.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,86 +40,115 @@ public class InformationExtinguisherActivity extends AppCompatActivity implement
 
         /*Registro*/
 
-        requestQueue = Volley.newRequestQueue(this);
-        initUI();
-        btnAgregar.setOnClickListener(this);
-    }
-
-
-    private void initUI(){
         etidExtintor=findViewById(R.id.et_id);
         etfolio=findViewById(R.id.et_folio);
         etcapacidad=findViewById(R.id.et_capacidad);
         ettipo=findViewById(R.id.et_tipo);
+        etubicacion=findViewById(R.id.et_ubicacion);
         etseguro=findViewById(R.id.et_seguro);
         etrecargado=findViewById(R.id.et_recargado);
-        etubicacion=findViewById(R.id.et_ubicacion);
-        etfecha_A=findViewById(R.id.et_fechaA);
-        etfecha_V=findViewById(R.id.et_fechaV);
 
         btnAgregar=findViewById(R.id.btn_Agregar);
+        btnAgregar.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                insertarDatos();
+            }
+        });
+
     }
+    private void insertarDatos(){
+        final String IdExtintor = etidExtintor.getText().toString().trim();
+        final String folio = etfolio.getText().toString().trim();
+        final String capacidad = etcapacidad.getText().toString().trim();
+        final String tipo = ettipo.getText().toString().trim();
+        final String ubicacion= etubicacion.getText().toString().trim();
+        final String seguro = etseguro.getText().toString().trim();
+        final String recargado = etrecargado.getText().toString().trim();
 
-    @Override
-    public void onClick(View v){
-        int id=v.getId();
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Cargando...");
 
-        if (id == R.id.btn_Agregar){
-            String idEx = etidExtintor.getText().toString().trim();
-            String folio = etfolio.getText().toString().trim();
-            String capacidad = etcapacidad.getText().toString().trim();
-            String tipo = ettipo.getText().toString().trim();
-            String seguro = etseguro.getText().toString().trim();
-            String recargado = etrecargado.getText().toString().trim();
-            String ubicacion= etubicacion.getText().toString().trim();
-            String fechaA = etfecha_A.getText().toString().trim();
-            String fechaV= etfecha_V.getText().toString().trim();
-
-            createExtintor(idEx,folio,capacidad,tipo,seguro,recargado,ubicacion,fechaA,fechaV);
+        if(IdExtintor.isEmpty()){
+            Toast.makeText(this, "Ingrese el N.Extintor", Toast.LENGTH_SHORT).show();
+            return;
         }
-        if(id==R.id.btn_Agregar){
-
+        else if(folio.isEmpty()){
+            Toast.makeText(this, "Ingrese el Folio", Toast.LENGTH_SHORT).show();
+            return;
         }
-    }
-
-    private void createExtintor(final String idEx,final String folio,final String capacidad,final String tipo,final String seguro,final String recargado,final String ubicacion,final String fechaA,final String fechaV)
-    {
-        StringRequest stringRequest= new StringRequest(
-                Request.Method.POST,
-                URL1,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(InformationExtinguisherActivity.this, "Correcto", Toast.LENGTH_SHORT).show();
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+        else if(capacidad.isEmpty()){
+            Toast.makeText(this, "Ingrese la Capacidad", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(tipo.isEmpty()){
+            Toast.makeText(this, "Ingrese el Tipo", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(ubicacion.isEmpty()){
+            Toast.makeText(this, "Ingrese la Ubicacion", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(seguro.isEmpty()){
+            Toast.makeText(this, "Ingrese si tiene el seguro", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(recargado.isEmpty()){
+            Toast.makeText(this, "Ingrese si esta Recargado", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else{
+            progressDialog.show();
+            StringRequest request=new StringRequest(Request.Method.POST, "https://proyectogexapp.000webhostapp.com/crud/insertar.php",
+                    new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    if (response.equalsIgnoreCase("Registro exitoso")) {
+                        Toast.makeText(InformationExtinguisherActivity.this, "Datos Insertados", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                        //Aqui cambia a la pantalla
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(InformationExtinguisherActivity.this, response, Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
 
                     }
                 }
-        ){
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                params.put("idEx", idEx);
-                params.put("folio",folio);
-                params.put("capacidad",capacidad);
-                params.put("tipo",tipo);
-                params.put("seguro",seguro);
-                params.put("recargado",recargado);
-                params.put("ubicacion",ubicacion);
-                params.put("fechaA",fechaA);
-                params.put("fechaV",fechaV);
-                return params;
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(InformationExtinguisherActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
             }
-        };
-        requestQueue.add(stringRequest);
+
+            ){
+                @Nullable
+                @Override
+                protected Map<String,String> getParams() throws AuthFailureError{
+                    Map<String,String> params=new HashMap<String,String>();
+                    params.put("IdExtintor",IdExtintor);
+                    params.put("folio",folio);
+                    params.put("capacidad",capacidad);
+                    params.put("tipo",tipo);
+                    params.put("ubicacion",ubicacion);
+                    params.put("seguro",seguro);
+                    params.put("recargado",recargado);
+                    return params;
+                }
+
+            };
+            RequestQueue requestQueue = Volley.newRequestQueue(InformationExtinguisherActivity.this);
+            requestQueue.add(request);
+        }
 
     }
-
+    @Override
+    public  void onBackPressed(){
+        super.onBackPressed();
+        finish();
+    }
 
 }

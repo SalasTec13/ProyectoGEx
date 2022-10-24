@@ -62,6 +62,17 @@
         app:layout_constraintTop_toBottomOf="@id/et_capacidad" />
 
     <EditText
+        android:id="@+id/et_ubicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="UBICACION"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_tipo" />
+
+    <EditText
         android:id="@+id/et_seguro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,7 +81,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_tipo" />
+        app:layout_constraintTop_toBottomOf="@id/et_ubicacion" />
 
     <EditText
         android:id="@+id/et_recargado"
@@ -82,40 +93,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_seguro" />
-
-    <EditText
-        android:id="@+id/et_ubicacion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="UBICACIÓN"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_recargado" />
-
-    <EditText
-        android:id="@+id/et_fechaA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="FECHA ACTIVO"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_ubicacion" />
-
-    <EditText
-        android:id="@+id/et_fechaV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="FECHA VENCIMIENTO"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_fechaA" />
 
     <Button
         android:id="@+id/btn_Agregar"

@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
         btnExtintores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HomeActivity.this, CalendarActivity.class);
+                Intent i = new Intent(HomeActivity.this, InformationExtinguisherActivity.class);
                 startActivity(i);
             }
         });
