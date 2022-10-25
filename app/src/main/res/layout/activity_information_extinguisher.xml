@@ -4,105 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="2dp">
-
+    android:padding="20dp">
     <TextView
         android:id="@+id/tv_extinguisher_information_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
+        style="@style/Title"
         android:text="Extintor @numero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/et_id"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="NUMERO DE EXTINTOR"
-        android:inputType="number"
+        android:hint="NÚMERO DE EXTINTOR"
+        android:layout_marginTop="30dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_extinguisher_information_title" />
-
-    <EditText
-        android:id="@+id/et_folio"
+        app:layout_constraintTop_toBottomOf="@id/tv_extinguisher_information_title">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_folio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:hint="FOLIO"
-        android:inputType="textPersonName"
+        android:layout_marginTop="15dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_id" />
-
-    <EditText
-        android:id="@+id/et_capacidad"
+        app:layout_constraintTop_toBottomOf="@id/til_id">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_folio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_capacidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:hint="CAPACIDAD"
-        android:inputType="numberDecimal"
+        android:layout_marginTop="15dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_folio" />
-
-    <EditText
-        android:id="@+id/et_tipo"
+        app:layout_constraintTop_toBottomOf="@id/til_folio">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_capacidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_tipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="TIPO"
-        android:inputType="textPersonName"
+        android:hint="TIPO DE EXTINTOR"
+        android:layout_marginTop="15dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_capacidad" />
-
-    <EditText
-        android:id="@+id/et_ubicacion"
+        app:layout_constraintTop_toBottomOf="@id/til_capacidad">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_tipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_ubicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="UBICACION"
-        android:inputType="textPersonName"
+        android:hint="UBICACIÓN"
+        android:layout_marginTop="15dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_tipo" />
-
-    <EditText
-        android:id="@+id/et_seguro"
+        app:layout_constraintTop_toBottomOf="@id/til_tipo">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_ubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_seguro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:hint="SEGURO"
-        android:inputType="textPersonName"
+        android:layout_marginTop="15dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_ubicacion" />
-
-    <EditText
-        android:id="@+id/et_recargado"
+        app:layout_constraintTop_toBottomOf="@id/til_ubicacion">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_seguro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_recargado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:hint="RECARGADO"
-        android:inputType="textPersonName"
+        android:layout_marginTop="15dp"
+        style="@style/TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_seguro" />
-
+        app:layout_constraintTop_toBottomOf="@id/til_seguro">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_recargado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            style="@style/TextInputLayout"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btn_Agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="15dp"
         android:text="AGREGAR"
+        style="@style/ButtonGreen"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
